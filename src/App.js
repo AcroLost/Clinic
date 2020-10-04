@@ -1,24 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import ProfileMain from './components/ProfileMain';
+import ProfileRecordsListContainer from './components/ProfileRecordsList/ProfileRecordsListContainer';
 
-function App() {
+const App = ({ history, doctors }) => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Menu />
+      <div className="main">
+        <Header />
+        <Switch>
+          <Route exact path="/profile" render={() => <ProfileMain doctors={doctors} />} />
+          <Route path="/profile/records"
+            render={() => <ProfileRecordsListContainer history={history} doctors={doctors} />}
+          />
+          <Route exact path="/" render={() => <Redirect to='/profile' />} />
+        </Switch>
+      </div>
     </div>
   );
 }

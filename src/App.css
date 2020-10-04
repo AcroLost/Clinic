@@ -1,38 +1,318 @@
-.App {
+@font-face {
+	font-family: Rubik;
+	src: url(./fonts/Rubik-Regular.ttf);
+}
+@font-face {
+	font-family: Rubik_Light;
+	src: url(./fonts/Rubik-Light.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Rubik;
+}
+
+body {
+  overflow: hidden;
+  user-select: none;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+}
+
+.menu {
+  font-size: 14px;
+  background-color: #003B72;
+  color: #fff;
+  padding: 21px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu .menu__logo {
+  padding: 0 0 20px;
+}
+
+.menu .menu__item {
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  text-decoration: none;
+}
+.menu .menu__help {
+  margin-bottom: 4px !important;
+}
+.menu .menu__item p {
+  margin-left: 14px;
+  width: 115px;
+}
+
+.menu .menu__item.menu__item_active {
+  margin: 0 -20px;
+  padding-left: 17px;
+  border-left: 3px solid #7761FF;
+  background-color: #FCFCFC;
+}
+
+.menu .menu__item.menu__item_active p {
+  color: #7761FF;
+}
+
+.menu .menu__button {
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: center;
+  background-color: #7761FF;
+  border-radius: 5px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+
+.main {
+  background-color: #FCFCFC;
+  width: 100%;
+}
+
+.header {
+  padding: 5px 20px;
+  background-color: #50CAFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header p {
+  font-size: 28px;
+  color: #fff;
+}
+
+.header .header__services {
+  display: flex;
+  align-items: center;
+}
+
+.header .header__services .header__user {
+  border: 1px solid #fff;
+  border-radius: 100%;
+  margin-right: 7px;
+}
+
+.header .header__services img {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+
+.content {
+  padding: 15px 20px 0;
+}
+.content .content__title {
+  display: flex;
+  padding-left: 20px;
+}
+.content .content__title p {
+  margin-left: 14px;
+}
+.content .content__title img {
+  cursor: pointer;
+}
+
+.content .content__cards {
+  display: flex;
+  align-items: center;
+}
+
+
+.card {
+  margin-top: 15px;
+  min-width: 445px;
+  max-width: 445px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 5px #EBE7FF;
+  border-radius: 5px;
+  padding: 20px;
+  margin-right: 20px;
+}
+
+.card .card__date {
+  font-weight: 600;
+}
+
+.card .card__address {
+  font-family: Rubik_Light;
+  margin-top: 5px;
+  font-size: 14px;
+  width: 280px;
+  line-height: 20px;
+}
+
+.card .card__doctor {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card .card__info {
+  margin-left: 9px;
+  font-size: 14px;
+  align-self: center;
+}
+.card .card__name {
+  font-weight: 600;
+}
+.card .card__speciality {
+  margin-top: 4px;
+  color: #EBE7FF;
+}
+
+.card .card__wrapper {
+  display: flex;
+}
+
+.card .card__button {
+  font-size: 14px;
+  padding: 12px 15px;
+  font-weight: 600;
+  color: #fff;
+  align-self: flex-end;
+  background-color: #7761FF;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.content__more {
+  font-size: 14px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.content__more a {
+  text-align: center;
+  margin-top: 6px;
+  text-decoration: none;
+  display: inline-block;
+  line-height: 13px;
+  border-bottom: 1px solid #50CAFF;
+  color: #50CAFF;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.services .services__title {
+  padding-left: 20px;
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.services .services__list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  width: 1115px;
+}
+
+.service {
+  margin-right: 16px;
+  margin-bottom: 15px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0px 0px 5px #EBE7FF;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.service:hover {
+  box-shadow: 0px 0px 0px 2px #50CAFF;
+}
+.service:hover .service__image {
+  background-color: #50CAFF;
+}
+.service:hover .service__title {
+  border-bottom: 2px solid #50CAFF;
+}
+.service:hover .service__list_item {
+  color: #50CAFF;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.service .service__info {
+  border-radius: 0 3px 3px 0;
+  background-color: #fff;
+  padding: 0 36px;
+}
+.service .service__title {
+  width: 334px;
+  padding-bottom: 6px;
+  font-size: 28px;
+  border-bottom: 2px solid #EBE7FF;
+}
+
+.service img {
+  padding: 66px 42px;
+}
+
+.services ul {
+  margin-top: 15px;
+}
+
+.services ul li {
+  line-height: 24px;
+  margin-top: 7px;
+  list-style-position: inside;
+  color: #EBE7FF;
+}
+.services ul li span {
+  color: #000;
+  margin-left: -7px;
+}
+
+.service .service__text {
+  margin-top: 20px;
+  width: 325px;
+  line-height: 24px;
+}
+
+.records__container {
+  margin-top: 15px;
+  text-align: right;
+}
+.records__wrapper {
+  margin-top: 15px;
+  display: flex;
+}
+
+.records {
+  height: calc(100vh - 130px);
+  overflow: auto;
+  width: 505px;
+  padding-bottom: 3px;
+}
+
+.records .records__show {
+  text-align: right;
+  margin-right: 20px;
+  text-decoration: underline;
+  color: #50CAFF;
+  cursor: pointer;
+}
+.records .records__message {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.records .card:nth-child(1) {
+  margin-top: 3px;
+}
+
+.records::-webkit-scrollbar {
+  width: 8px;
+  background-color: #EBE7FF;
+  border-radius: 5px;
+}
+
+.records::-webkit-scrollbar-thumb { 
+  background-color: #003B72;
+  border-radius: 5px;
 }
