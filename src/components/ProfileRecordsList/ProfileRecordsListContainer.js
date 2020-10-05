@@ -33,11 +33,7 @@ const ProfileRecordsListContainer = ({ history, doctors }) => {
     setFilter(false);
   }
 
-  const goBack = () => {
-    history.goBack()
-  }
-
-  return <ProfileRecordsList goBack={goBack}
+  return <ProfileRecordsList goBack={history.goBack}
     doctors={doctors}
     filter={filter}
     doctorsElements={doctorsElements}
