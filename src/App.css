@@ -191,6 +191,11 @@ body {
   text-align: center;
 }
 
+.content .content__missing {
+  font-size: 22px;
+  padding: 60px 0;
+}
+
 .content__more a {
   text-align: center;
   margin-top: 6px;

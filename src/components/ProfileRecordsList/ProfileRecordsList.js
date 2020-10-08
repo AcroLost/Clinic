@@ -2,9 +2,9 @@ import React from 'react';
 import Calendar from '../Calendar/Calendar';
 import CardDoctorContainer from '../CardDoctor/CardDoctorContainer';
 
-const ProfileRecordsList = ({ goBack, doctors, filter, doctorsElements, filterDoctors, showAllRecords }) => {
+const ProfileRecordsList = ({ goBack, doctors, filter, doctorsElements, filterDoctors, showAllRecords, cancelRecord }) => {
 
-  const doctorsList = doctorsElements.map(doctor => <CardDoctorContainer key={doctor.id} {...doctor} />)
+  const doctorsList = doctorsElements.map(doctor => <CardDoctorContainer key={doctor.id} {...doctor} cancelRecord={cancelRecord} />)
 
   return (
     <div className="content">

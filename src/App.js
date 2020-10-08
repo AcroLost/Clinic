@@ -6,7 +6,7 @@ import Menu from './components/Menu';
 import ProfileMain from './components/ProfileMain';
 import ProfileRecordsListContainer from './components/ProfileRecordsList/ProfileRecordsListContainer';
 
-const App = ({ history, doctors }) => {
+const App = ({ history, doctors, cancelRecord }) => {
 
   return (
     <div className="wrapper">
@@ -14,9 +14,9 @@ const App = ({ history, doctors }) => {
       <div className="main">
         <Header />
         <Switch>
-          <Route exact path="/profile" render={() => <ProfileMain doctors={doctors} />} />
+          <Route exact path="/profile" render={() => <ProfileMain doctors={doctors} cancelRecord={cancelRecord} />} />
           <Route path="/profile/records"
-            render={() => <ProfileRecordsListContainer history={history} doctors={doctors} />}
+            render={() => <ProfileRecordsListContainer history={history} doctors={doctors} cancelRecord={cancelRecord} />}
           />
           <Route exact path="/" render={() => <Redirect to='/profile' />} />
         </Switch>

@@ -16,7 +16,11 @@ const AppContainer = ({ history }) => {
             })
     }, []);
 
-    return <App doctors={doctors} history={history} />
+    const cancelRecord = (id) => {
+        setDoctors(doctors.filter(doctor => doctor.id !== id));
+    }
+
+    return <App doctors={doctors} history={history} cancelRecord={cancelRecord} />
 }
 
 export default withRouter(AppContainer);

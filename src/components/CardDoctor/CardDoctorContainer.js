@@ -23,7 +23,7 @@ const CardDoctorContainer = (props) => {
         setWeekDay(days[newDate.getDay()]);
     }
 
-    return <CardDoctor {...props} dateTime={dateTime} weekDay={weekDay} />
+    return <CardDoctor {...props} dateTime={dateTime} weekDay={weekDay} cancelRecord={props.cancelRecord} />
 }
 
 export default CardDoctorContainer;

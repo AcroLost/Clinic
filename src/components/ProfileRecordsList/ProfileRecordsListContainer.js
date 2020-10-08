@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProfileRecordsList from './ProfileRecordsList';
 
-const ProfileRecordsListContainer = ({ history, doctors }) => {
+const ProfileRecordsListContainer = ({ history, doctors, cancelRecord }) => {
 
   const [filter, setFilter] = useState(false),
     [doctorsElements, setDoctorsElements] = useState([]);
@@ -38,7 +38,8 @@ const ProfileRecordsListContainer = ({ history, doctors }) => {
     filter={filter}
     doctorsElements={doctorsElements}
     filterDoctors={filterDoctors}
-    showAllRecords={showAllRecords} />
+    showAllRecords={showAllRecords}
+    cancelRecord={cancelRecord} />
 }
 
 export default ProfileRecordsListContainer;

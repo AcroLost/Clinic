@@ -1,6 +1,6 @@
 import React from 'react';
 
-const CardDoctor = ({ name, address, speciality, image, dateTime, weekDay }) => {
+const CardDoctor = ({ id, name, address, speciality, image, dateTime, weekDay, cancelRecord }) => {
     return (
         <div className="card">
             <p className="card__date">{weekDay} {dateTime}</p>
@@ -15,7 +15,7 @@ const CardDoctor = ({ name, address, speciality, image, dateTime, weekDay }) => 
                         <p className="card__speciality">{speciality}</p>
                     </div>
                 </div>
-                <p className="card__button">Отменить</p>
+                <p className="card__button" onClick={() => cancelRecord(id)}>Отменить</p>
             </div>
         </div>
     );

@@ -3,9 +3,9 @@ import { NavLink } from 'react-router-dom';
 import { Service } from '../ui-components/Service';
 import CardDoctorContainer from './CardDoctor/CardDoctorContainer';
 
-const ProfileMain = ({ doctors }) => {
+const ProfileMain = ({ doctors, cancelRecord }) => {
 
-  const doctorsList = doctors.map(doctor => <CardDoctorContainer key={doctor.id} {...doctor} />)
+  const doctorsList = doctors.map(doctor => <CardDoctorContainer key={doctor.id} {...doctor} cancelRecord={cancelRecord} />)
 
   return (
     <div className="content">
@@ -15,8 +15,13 @@ const ProfileMain = ({ doctors }) => {
         {doctorsList.slice(0, 2)}
 
         <div className="content__more">
-          <p>Еще {doctors.length - 2} записи</p>
-          <NavLink to="/profile/records">Подробнее</NavLink>
+          {doctors.length > 2 &&
+            <p>Еще {doctors.length - 2} записи</p>
+          }
+          {doctors.length > 0
+            ? <NavLink to="/profile/records">Подробнее</NavLink>
+            : <p className="content__missing">Записи на прием отсутствуют</p>
+          }
         </div>
       </div>
 
